@@ -1,46 +1,30 @@
 // src/components/Header.js
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom'; // Import Link for navigation
-import './Header.css'; // Make sure your CSS file path is correct
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import './Header.css';
 import companylogoImage from '../assets/images/companylogo.png';
 import searchImage from '../assets/images/search.png';
 import userImage from '../assets/images/account.png';
 import cartImage from '../assets/images/shopping-bag.png';
 import wishlistImage from '../assets/images/love.png';
 import gemImage from '../assets/images/gem.png';
+import { useCart } from '../context/CartContext';
+import { useUser } from '../context/UserContext';
 
 const Header = () => {
-  const [cartItems, setCartItems] = useState([]);
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
-  const [gemCount, setGemCount] = useState(0);
-  const [user, setUser] = useState(null);
+  const { cart, clearCart } = useCart();
+  const { user, handleLogout } = useUser();
+  const [subtotal, setSubtotal] = useState(0);
+  const navigate = useNavigate(); // This now works as expected
 
-  useEffect(() => {
-    // Fetch cart items and user details from backend or local storage
-    fetchCartItems();
-    fetchUserDetails();
-  }, []);
-
-  const fetchCartItems = () => {
-    // Fetch cart items logic here (replace with your API endpoint)
-    // For example: setCartItems([{product_name: 'Shirt', quantity: 1, size: 'M', product_price: 1500}]);
-  };
-
-  const fetchUserDetails = () => {
-    // Fetch user details (like gem count and session info)
-    // For example: setUser({ username: 'John Doe', gems: 20 });
+  const calculateSubtotal = () => {
+    const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    setSubtotal(total);
   };
 
   const toggleDropdown = () => {
     setIsDropdownVisible(!isDropdownVisible);
-  };
-
-  const showCartDetails = () => {
-    document.getElementById('cart-dropdown-content').style.display = 'block';
-  };
-
-  const hideCartDetails = () => {
-    document.getElementById('cart-dropdown-content').style.display = 'none';
   };
 
   return (
@@ -73,19 +57,36 @@ const Header = () => {
 
             <li>
               <div className="cart-container">
-                <div className="cart-icon" onMouseOver={showCartDetails} onMouseOut={hideCartDetails}>
+                <div className="cart-icon">
                   <img src={cartImage} alt="Shopping Cart Icon" />
-                  <div className="cart-dropdown" id="cart-dropdown-content">
-                    {cartItems.length > 0 ? (
-                      <div className="cart-items">
-                        {cartItems.map((item, index) => (
-                          <div className="cart-item" key={index}>
-                            <img src={item.main_image} alt="Product Image" className="cart-item-image" />
-                            {item.product_name} <br /> X {item.quantity} <br /> Size: {item.size}
-                            <br /> LKR {item.product_price.toFixed(2)}
-                          </div>
-                        ))}
-                      </div>
+                  <div className="cart-dropdown">
+                    {cart.length > 0 ? (
+                      <>
+                        <div className="cart-items">
+                          {cart.map((item, index) => (
+                            <div className="cart-item" key={index}>
+                              <img
+                                src={`http://localhost:5000/images/${item.main_image}`}
+                                alt={item.product_name}
+                                className="cart-item-image"
+                              />
+                              {item.product_name} <br /> X {item.quantity}
+                              <br /> LKR {(item.price * item.quantity).toFixed(2)}
+                            </div>
+                          ))}
+                        </div>
+                        <div className="price-section">
+                          <p className="sub">SubTotal: LKR {subtotal.toFixed(2)}</p>
+                        </div>
+                        <div className="cart-buttons">
+                          <button className="checkout-button" onClick={() => navigate('/checkout')}>
+                            Go to Checkout
+                          </button>
+                          <button className="clear-cart-button" onClick={clearCart}>
+                            Clear Cart
+                          </button>
+                        </div>
+                      </>
                     ) : (
                       <div className="empty-cart">Your cart is empty</div>
                     )}
@@ -114,58 +115,45 @@ const Header = () => {
             )}
 
             <li className="account-dropdown">
-              {user ? (
-                <>
-                  <a href="#" onClick={toggleDropdown}>
-                    <img src={userImage}  alt="User Account" className="login-icon" />
-                  </a>
-                  <div className={`dropdown-content ${isDropdownVisible ? 'show' : ''}`} id="dropdownMenu">
+              <a href="#" onClick={toggleDropdown}>
+                <img src={userImage} alt="User Account" className="login-icon" />
+              </a>
+              <div className={`dropdown-content ${isDropdownVisible ? 'show' : ''}`} id="dropdownMenu">
+                {user ? (
+                  <>
                     <Link to="/profile">Profile</Link>
                     <Link to="/history">Order History</Link>
-                    <Link to="/logout">Logout</Link>
-                  </div>
-                </>
-              ) : (
-                <>
-                  <a href="#" onClick={toggleDropdown}>
-                    <img src={userImage} alt="Login/Register" className="login-icon" />
-                  </a>
-                  <div className={`dropdown-content ${isDropdownVisible ? 'show' : ''}`} id="dropdownMenu">
+                    <Link to="#" onClick={handleLogout}>Logout</Link>
+                  </>
+                ) : (
+                  <>
                     <Link to="/login">Login</Link>
                     <Link to="/signup">Signup</Link>
-                  </div>
-                </>
-              )}
+                  </>
+                )}
+              </div>
             </li>
           </ul>
-          
         </nav>
-        </div>
-        <div className="bottom-section">
-          <nav>
-            <ul>
-              <li className="nav-item">
-                <Link to="/">Home</Link>
-              </li>
-             
-            <li class="nav-item has-dropdown">
-            <Link to="/overview">Overview</Link>
-                
+      </div>
+      <div className="bottom-section">
+        <nav>
+          <ul>
+            <li className="nav-item">
+              <Link to="/">Home</Link>
             </li>
-            
-            <li class="nav-item has-dropdown">
-            <Link to="/overview">Menu</Link>
-                
+            <li className="nav-item has-dropdown">
+              <Link to="/overview">Overview</Link>
             </li>
-
-            <li class="nav-item has-dropdown">
-            <Link to="/overview">Reservation</Link>
-                
+            <li className="nav-item has-dropdown">
+              <Link to="/menu">Menu</Link>
             </li>
-            </ul>
-          </nav>
-        </div>
-      
+            <li className="nav-item has-dropdown">
+              <Link to="/reservation">Reservation</Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
   );
 };
