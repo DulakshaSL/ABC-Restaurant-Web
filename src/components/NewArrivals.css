@@ -61,11 +61,12 @@
 }
 
 
-.view-all-btn-container {
+.view-container {
     text-align: center;
+    
   }
   
-  .view-all-btn {
+  .view-bn {
     display: inline-block;
     padding: 20px;
     margin-left: 525px;
@@ -81,7 +82,7 @@
     transition: background-color 0.3s ease;
   }
   
-  .view-all-btn:hover {
+  .view-bn:hover {
     background-color: #504f4f; 
   }
 

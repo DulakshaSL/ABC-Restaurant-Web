@@ -80,10 +80,10 @@ function Home() {
             Dive into the world of exquisite flavors and embark on a culinary journey like no other. 
             Every dish we serve has a story, an origin, and a soul of its own.
           </p>
-          <a href="/menu" className="view-btn">View All</a>
+          <a href="/menu" className="view-button">View All</a>
         </div>
 
-        <div className="images-grid">
+        <div className="images-gr">
           <img src={dish1Image} alt="Dish 1" />
           <img src={dish2Image} alt="Dish 2" />
           <img src={dish3Image} alt="Dish 3" />

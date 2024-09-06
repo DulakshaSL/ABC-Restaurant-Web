@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './Reservation.css'; // Ensure you have corresponding styles
+import reserveImage from '../assets/images/reservenow.png';
 
 const Reservation = () => {
   const [formData, setFormData] = useState({
@@ -69,7 +70,7 @@ const Reservation = () => {
     <section id="reservation-section">
       <div className="creative-content">
         <h3>Book Your Table Now!</h3>
-        <img src="resources/reservenow.png" alt="Reserve Now" />
+        <img src={reserveImage}  alt="Reserve Now" />
 
         <div className="guidelines">
           <h2>Reservation Guidelines</h2>

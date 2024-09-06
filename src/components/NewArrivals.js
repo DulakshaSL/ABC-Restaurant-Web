@@ -66,8 +66,8 @@ const NewArrivals = () => {
         )}
       </div>
       
-      <div className="view-all-btn-container">
-        <a href="/newarrivals" className="view-all-btn">View Collection</a>
+      <div className="view-container">
+        <a href="/newarrivals" className="view-bn">View Collection</a>
       </div>
 
     </div>

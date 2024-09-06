@@ -34,6 +34,7 @@
   flex: 1;  
   max-width: 30%;  
   padding-bottom: 10px;
+  padding-right: 12px;
   margin: 20px;  
   background-color: rgba(52, 52, 52, 0.466);
   border: none;
@@ -66,6 +67,7 @@
 
 .features-card p {
   padding-left: 10px; 
+  font-size: 16px;
   color: white;  
   border-radius: 0 0 10px 10px;  
 }
@@ -117,11 +119,12 @@
   margin-bottom: 20px;
   color: white;
   padding-bottom: 15px;
+  font-size: 16px;
 }
 
 .learn-more {
   text-decoration: none;
-  padding: 10px 20px;
+  padding: 15px 20px;
   background-color: rgb(52, 52, 52);
   color: #fff;
   border-radius: 5px;
@@ -299,27 +302,31 @@
   border-right: none;
 }
 
+.intro-content p {
+  font-size: 17px;
+}
+
 .intro-content {
   flex: 1; 
   padding-right: 20px; 
 }
 
-.images-grid {
+.images-gr {
   display: grid;
   grid-template-columns: repeat(2, 1fr); 
   grid-gap: 10px;
 
 }
 
-.images-grid img {
+.images-gr img {
   width: 150px;
   height: auto;
   object-fit: cover;
 }
 
-.view-btn {
+.view-button {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 15px 40px;
   margin-top: 20px; 
   background-color: rgb(52, 52, 52);;
   color: #fff;
@@ -328,7 +335,7 @@
   transition: background-color 0.3s; 
 }
 
-.view-btn:hover {
+.view-button:hover {
   background-color: #555; 
 }
 

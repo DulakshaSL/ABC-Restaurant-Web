@@ -4,6 +4,7 @@ import Home from './components/Home';
 import LoginForm from './components/LoginForm';
 import SignupForm from './components/SignupForm';
 import ProductDetails from './components/ProductDetails';
+import Overview from './components/Overview';
 import NewArrivals from './components/NewArrivals';
 import Confirmation from './components/OrderConfirmation';
 import ReservationPage from './components/Reservation'; // Import ReservationPage
@@ -24,6 +25,7 @@ function App() {
             <ToastContainer />
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/overview" element={<Overview />} />
               <Route path="/new-arrivals" element={<NewArrivals />} />
               <Route path="/product/:id" element={<ProductDetails />} />
               <Route path="/reservation" element={<ReservationPage />} /> {/* Add route for reservation */}
