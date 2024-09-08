@@ -75,8 +75,8 @@ const Overview = () => {
       {/* Exclusive Offers Section */}
       <section className="explore-section">
         <div className="explore-content">
-          <img src={exclusiveImage}  alt="Explore Image 1" className="explore-image" />
-          <div className="explore-text">
+          <img src={exclusiveImage}  alt="Explore Image 1" className="explore-image3" />
+          <div className="explore-text3">
             <h3>Exclusive offers for our loyal customers!</h3>
             <p>
               At ABC Restaurant, we love to reward our loyal customers. That's why we're offering a variety of

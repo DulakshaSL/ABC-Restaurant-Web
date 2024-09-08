@@ -142,6 +142,7 @@ const Header = () => {
             <li className="nav-item">
               <Link to="/">Home</Link>
             </li>
+           
             <li className="nav-item has-dropdown">
               <Link to="/overview">Overview</Link>
             </li>
@@ -151,11 +152,24 @@ const Header = () => {
             <li className="nav-item has-dropdown">
               <Link to="/reservation">Reservation</Link>
             </li>
+
+            <li className="nav-item has-dropdown">
+              <Link to="/gallery">Gallery</Link>
+            </li>
+
+            <li className="nav-item has-dropdown">
+              <Link to="/facilities">Facilities</Link>
+            </li>
+
+            <li className="nav-item has-dropdown">
+              <Link to="/contact">Contact Us</Link>
+            </li>
           </ul>
         </nav>
       </div>
     </header>
   );
 };
+
 
 export default Header;

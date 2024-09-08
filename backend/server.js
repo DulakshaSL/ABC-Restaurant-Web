@@ -75,6 +75,12 @@ app.use('/api/orders', orderRoutes); // Register the orders route
 const reservationRoutes = require('./routes/reservationRoutes');
 app.use('/api/reservations', reservationRoutes);
 
+const contactRoutes = require('./routes/contactRoutes'); // Import contact routes
+app.use('/api', contactRoutes);
+
+const facilityRoutes = require('./routes/facilityRoutes');
+app.use('/api', facilityRoutes);
+
 // Start the server
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);

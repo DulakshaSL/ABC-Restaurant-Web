@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useCart } from '../context/CartContext';
 import { useUser } from '../context/UserContext';
 import { useNavigate } from 'react-router-dom';
-import './Checkout.css'; // Add styles as needed
+import './Checkout.css'; 
 import axios from 'axios';
 import { toast } from 'react-toastify';
 

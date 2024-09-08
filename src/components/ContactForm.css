@@ -1,0 +1,108 @@
+main {
+    
+    margin: 20px auto;
+    
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+ }
+
+ /* Contact information and form styles */
+ .contact-info {
+    margin-bottom: 20px;
+ }
+
+ .contact-container {
+    display: flex;
+    justify-content: space-between;
+ }
+
+ .restaurant-image {
+    flex: 1; 
+    max-width: 500px;
+    margin-right: 20px;
+    margin-left: 110px;
+ }
+
+ .contact-form {
+    flex: 1; 
+    max-width: 550px;
+    margin-right: 110px;
+ }
+
+ .contact-info h2 {
+    font-size: 1.5rem;
+    color: #333;
+ }
+
+ .contact-info ul {
+    list-style: none;
+    padding-left: 0;
+ }
+
+ .contact-info li {
+    margin-bottom: 10px;
+ }
+
+ .contact-form {
+    background-color: transparent;
+    border: 1px solid grey;
+    padding: 20px;
+    border-radius: 5px;   
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+ }
+
+ .contact-form h2 {
+    font-size: 1.5rem;
+    color: white;
+ }
+
+ .contact-form p {
+    margin-top: 10px;
+    color: #555;
+    color: white;
+ }
+
+ .contact-form label {
+    display: block;
+    font-weight: bold;
+    margin: 10px 0;
+    color: white;
+ }
+
+ .contact-form input[type="text"],
+ .contact-form input[type="email"],
+ .contact-form textarea {
+    width: 97%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid grey;
+    border-radius: 3px;
+    color: white;
+    background-color: transparent;
+ }
+
+ .contact-form textarea {
+    padding-top: 10px;
+ }
+
+ .contact-form textarea {
+    resize: none;
+ }
+
+ .contact-form button {
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    color: white;
+ }
+
+ .contact-form button:hover {
+    background-color: #c0392b;
+ }
+  
+ /*Contact Form And Other Details */
