@@ -6,8 +6,11 @@ import SignupForm from './components/SignupForm';
 import ProductDetails from './components/ProductDetails';
 import Overview from './components/Overview';
 import NewArrivals from './components/NewArrivals';
+import AllDishes from './components/AllDishes';
 import Contacts from './components/ContactForm';
 import Facilities from './components/Facilities';
+import Gallery from './components/Gallery';
+import Menu from './components/menu';
 import Confirmation from './components/OrderConfirmation';
 import ReservationPage from './components/Reservation'; // Import ReservationPage
 import { CartProvider } from './context/CartContext'; // Import the CartProvider
@@ -30,6 +33,8 @@ function App() {
               <Route path="/overview" element={<Overview />} />
               <Route path="/contact" element={<Contacts />} />
               <Route path="/new-arrivals" element={<NewArrivals />} />
+              <Route path="/gallery" element={<Gallery/>} />
+              <Route path="/menu" element={<Menu/>} />
               <Route path="/product/:id" element={<ProductDetails />} />
               <Route path="/reservation" element={<ReservationPage />} /> {/* Add route for reservation */}
               <Route path="/checkout" element={<Checkout />} /> {/* Add the checkout route */}

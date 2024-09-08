@@ -15,6 +15,31 @@ router.get('/products/popular', async (req, res) => {
 });
 
 
+// GET dishes 
+router.get('/products/dishes', async (req, res) => {
+  try {
+    const products = await Product.find({ category: "Dishes"});
+    res.json(products);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+
+  
+});
+
+// GET beverages
+router.get('/products/beverages', async (req, res) => {
+  try {
+    const products = await Product.find({ category: "Beverages"});
+    res.json(products);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+
+  
+});
+
+
 // Get product details by ID
 router.get('/products/:id', async (req, res) => {
   try {

@@ -51,6 +51,7 @@ app.use(
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 app.use('/images', express.static('public/images'));
+app.use('/gallery', express.static('public/gallery'));
 
 const authRoutes = require('./routes/authRoutes');
 app.use('/api', authRoutes);
@@ -68,18 +69,21 @@ app.use('/api', require('./routes/ProductRoutes'));
 const cartRoutes = require('./routes/cart'); // Add cart route file
 app.use('/api/cart', cartRoutes); // Mount cart routes at /api/cart
 
-const orderRoutes = require('./routes/orderRoutes'); // Import the orders route
-app.use('/api/orders', orderRoutes); // Register the orders route
+const orderRoutes = require('./routes/orderRoutes'); 
+app.use('/api/orders', orderRoutes); 
 
 // Routes
 const reservationRoutes = require('./routes/reservationRoutes');
 app.use('/api/reservations', reservationRoutes);
 
-const contactRoutes = require('./routes/contactRoutes'); // Import contact routes
+const contactRoutes = require('./routes/contactRoutes'); 
 app.use('/api', contactRoutes);
 
 const facilityRoutes = require('./routes/facilityRoutes');
 app.use('/api', facilityRoutes);
+
+const galleryRoutes = require('./routes/galleryRoutes');
+app.use('/api/gallery', galleryRoutes);
 
 // Start the server
 app.listen(port, () => {

@@ -103,16 +103,7 @@ const Header = () => {
               </Link>
             </li>
 
-            {user && (
-              <li>
-                <a href="#" className="">
-                  <div className="gem-icon">
-                    <img src={gemImage} alt="Gem Icon" />
-                  </div>
-                  <span className="gem-count">{user.gems}</span>
-                </a>
-              </li>
-            )}
+           
 
             <li className="account-dropdown">
               <a href="#" onClick={toggleDropdown}>
