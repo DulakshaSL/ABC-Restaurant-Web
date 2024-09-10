@@ -1,33 +1,43 @@
+
 #reservation-section {
     display: flex;
     justify-content: space-between;
-    padding: 5% 10%;
+    padding: 2% 10%;
    
   }
 
   .reservation-form {
     flex: 1; 
     padding: 20px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    background-color: rgba(52, 52, 52, 0.466);
+    border: 1px solid #696866;
     margin: 20px;
     color: white;
     border-radius: 10px;
   }
 
+  .reservation-form h2 {
+   font-size: 1.4em;
+   color: white;
+   
+  
+   
+ }
+
  .creative-content{
   flex: 1; 
   padding: 20px;
   font-family: 'Times New Roman', Times, serif;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  background-color: rgba(52, 52, 52, 0.466);
+
+ 
   margin: 18px;
   color: white;
   border-radius: 10px;
  }
 
  .creative-content img{
-  width: 400px;
+  width: 700px;
+  position: relative;
+  right: 50px;
  }
 
  .creative-content {
@@ -35,7 +45,7 @@
  }
 
  .creative-content h3 {
-    font-size: 1.6em;
+    font-size: 1.4em;
     margin-bottom: 20px;
  }
 
@@ -62,8 +72,8 @@
   
   /* Style for h3 and h4 */
   .guidelines h2 {
-     margin: 0; /* Remove default margin */
-     font-size: 22px;
+     margin: 0; 
+     font-size: 1.3em;
      padding-bottom: 25px;
      text-decoration: underline;
   }
@@ -101,7 +111,10 @@
 
  label {
   display: block;
-  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 14px;
+    margin: 10px 0;
+    color: white;
  }
 
  .btn-container {
@@ -129,12 +142,14 @@
  }
 
  input[type="text"], input[type="email"], input[type="tel"], input[type="date"], input[type="time"], input[type="number"] {
-  width: 100%;
-  padding: 10px;
-  background-color: transparent;
-  border: 1px solid #989696;
-  border-radius: 5px;
-  color: white;
+   width: 97%;
+    height: 30px;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #696866;
+    border-radius: 5px;
+    color: white;
+    background-color: transparent;
  }
 
  #onlinelabel{

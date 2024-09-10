@@ -53,22 +53,30 @@ router.get('/products/:id', async (req, res) => {
   }
 });
 
+
+
 // Get similar products by category
 router.get('/similar/:id', async (req, res) => {
   try {
     const product = await Product.findById(req.params.id);
     if (!product) {
+      console.log('Product not found with ID:', req.params.id);
       return res.status(404).json({ message: 'Product not found' });
     }
+
+    // Fetching similar products in the same category
     const similarProducts = await Product.find({
       category: product.category,
-      _id: { $ne: product._id },
+      _id: { $ne: product._id }, // Exclude the current product
     }).limit(3);
+
+    console.log('Similar products found:', similarProducts);
+
     res.json(similarProducts);
   } catch (error) {
+    console.error('Error fetching similar products:', error);
     res.status(500).json({ message: 'Server error', error });
   }
-
 });
 
 module.exports = router;

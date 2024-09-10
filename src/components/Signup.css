@@ -7,13 +7,15 @@ body {
 }
 
 .header {
-    background-color: rgba(45, 45, 45, 0.599);
-    padding: 10px 20px;
+   
+    
 }
+
+
 
 h1{
  font-size: 28px;
- font-family: Georgia, 'Times New Roman', Times, serif;
+ font-family: 'Times New Roman', Times, serif;
  font-weight:bold;
 }
 
@@ -36,7 +38,8 @@ h1{
 
 
 .auth-section h2{
-    font-size: 16px;
+    font-size: 18px;
+     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
     padding-top: 15px;
     text-align: center;
@@ -77,6 +80,9 @@ a{
     display: flex;
     align-items: center;
     justify-content: center;
+    
+
+ 
 }
 
 .logo {
@@ -97,7 +103,7 @@ a{
     left: 350px;
     top: 175px;
     padding-bottom: 20px;
-    width: 350px;
+    width: 300px;
    
 }
 
@@ -115,7 +121,7 @@ span.error {
 
 .auth-section {
     position: absolute;
-    width: 300px; 
+    width: 350px; 
     padding-right: 50px;
     padding-left: 25px;
     padding-bottom: 15px;
@@ -124,9 +130,11 @@ span.error {
     border: none;
     border-radius: 15px;
     margin-bottom: 110px;
+    margin-top: 120px;
     right: 140px;
    
 }
+
 
 .auth-field label {
     display: block;

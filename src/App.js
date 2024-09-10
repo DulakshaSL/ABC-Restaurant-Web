@@ -3,10 +3,11 @@ import { Route, Routes } from 'react-router-dom'; // No need to import Router he
 import Home from './components/Home';
 import LoginForm from './components/LoginForm';
 import SignupForm from './components/SignupForm';
+import Dashboard from './components/Dashboard';
+import Signup from './components/SignUpStaff';
 import ProductDetails from './components/ProductDetails';
 import Overview from './components/Overview';
 import NewArrivals from './components/NewArrivals';
-import AllDishes from './components/AllDishes';
 import Contacts from './components/ContactForm';
 import Facilities from './components/Facilities';
 import Gallery from './components/Gallery';
@@ -40,8 +41,10 @@ function App() {
               <Route path="/checkout" element={<Checkout />} /> {/* Add the checkout route */}
               <Route path="/Confirmation" element={<Confirmation />} />
               <Route path="/signup" element={<SignupForm />} />
+              <Route path="/staff" element={<Signup />} />
               <Route path="/facilities" element={<Facilities />} />
               <Route path="/login" element={<LoginForm />} />
+              <Route path="/dashboard" element={<Dashboard />} />
             </Routes>
           </RouteWrapper>
         </CartProvider>

@@ -1,6 +1,6 @@
 #main-title {
     font-family:'Times New Roman', Times, serif;
-    font-size: 26px;
+    font-size: 23px;
     margin: 0 auto;
     text-align: center;
     width: 100%;
@@ -12,24 +12,29 @@
     color: white;
 }
 
+.container{
+ margin-right: 65px;
+
+}
+
 
 
   .product-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
+    grid-gap: 15px;
 }
 
 .product-card {
-    background-color: #fff;
+   
     border: none;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    width: 330px;
+    width: 300px;
     transition: transform 0.3s ease;
     background-color: rgba(52, 52, 52, 0.466);
-    margin-left: 50px;
+    margin-left: 65px;
     margin-bottom: 30px;
 }
 
@@ -54,6 +59,7 @@
 .product-card h3 {
     margin-top: 10px;
     font-size: 18px;
+    
 }
 
 .product-card p {

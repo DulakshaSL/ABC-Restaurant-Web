@@ -30,6 +30,8 @@ export const UserProvider = ({ children }) => {
     try {
       await axios.post('http://localhost:5000/api/logout');
       localStorage.removeItem('userId');
+      localStorage.removeItem('user');
+      localStorage.removeItem('token');
       setUser(null);
       navigate('/login');
     } catch (error) {

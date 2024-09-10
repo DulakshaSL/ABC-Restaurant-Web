@@ -1,6 +1,7 @@
 // src/components/Header.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom'; // Import NavLink
 import './Header.css';
 import companylogoImage from '../assets/images/companylogo.png';
 import searchImage from '../assets/images/search.png';
@@ -16,8 +17,8 @@ const Header = () => {
   const { cart, clearCart } = useCart();
   const { user, handleLogout } = useUser();
   const [subtotal, setSubtotal] = useState(0);
-  const navigate = useNavigate(); // This now works as expected
-
+  const navigate = useNavigate(); 
+  
   const calculateSubtotal = () => {
     const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
     setSubtotal(total);
@@ -26,6 +27,10 @@ const Header = () => {
   const toggleDropdown = () => {
     setIsDropdownVisible(!isDropdownVisible);
   };
+
+  useEffect(() => {
+    calculateSubtotal();
+  }, [cart]); // Recalculate subtotal whenever cart changes
 
   return (
     <header>
@@ -75,14 +80,14 @@ const Header = () => {
                             </div>
                           ))}
                         </div>
-                        <div className="price-section">
+                        <div className="price-section" >
                           <p className="sub">SubTotal: LKR {subtotal.toFixed(2)}</p>
                         </div>
-                        <div className="cart-buttons">
-                          <button className="checkout-button" onClick={() => navigate('/checkout')}>
+                        <div className="cart-butt">
+                          <button className="checkout-butt" onClick={() => navigate('/checkout')}>
                             Go to Checkout
                           </button>
-                          <button className="clear-cart-button" onClick={clearCart}>
+                          <button className="clear-cart-butt" onClick={clearCart}>
                             Clear Cart
                           </button>
                         </div>
@@ -113,7 +118,7 @@ const Header = () => {
                 {user ? (
                   <>
                     <Link to="/profile">Profile</Link>
-                    <Link to="/history">Order History</Link>
+                    <Link to="/dashboard">Order History</Link>
                     <Link to="#" onClick={handleLogout}>Logout</Link>
                   </>
                 ) : (
@@ -128,35 +133,51 @@ const Header = () => {
         </nav>
       </div>
       <div className="bottom-section">
-        <nav>
-          <ul>
-            <li className="nav-item">
-              <Link to="/">Home</Link>
-            </li>
-           
-            <li className="nav-item has-dropdown">
-              <Link to="/overview">Overview</Link>
-            </li>
-            <li className="nav-item has-dropdown">
-              <Link to="/menu">Menu</Link>
-            </li>
-            <li className="nav-item has-dropdown">
-              <Link to="/reservation">Reservation</Link>
-            </li>
+      <nav>
+      <ul>
+        <li className="nav-item">
+          <NavLink exact to="/" activeClassName="active" className="nav-link">
+            Home
+          </NavLink>
+        </li>
 
-            <li className="nav-item has-dropdown">
-              <Link to="/gallery">Gallery</Link>
-            </li>
+        <li className="nav-item has-dropdown">
+          <NavLink to="/overview" activeClassName="active" className="nav-link">
+            Overview
+          </NavLink>
+        </li>
 
-            <li className="nav-item has-dropdown">
-              <Link to="/facilities">Facilities</Link>
-            </li>
+        <li className="nav-item has-dropdown">
+          <NavLink to="/menu" activeClassName="active" className="nav-link">
+            Menu
+          </NavLink>
+        </li>
 
-            <li className="nav-item has-dropdown">
-              <Link to="/contact">Contact Us</Link>
-            </li>
-          </ul>
-        </nav>
+        <li className="nav-item has-dropdown">
+          <NavLink to="/reservation" activeClassName="active" className="nav-link">
+            Reservation
+          </NavLink>
+        </li>
+
+        <li className="nav-item has-dropdown">
+          <NavLink to="/gallery" activeClassName="active" className="nav-link">
+            Gallery
+          </NavLink>
+        </li>
+
+        <li className="nav-item has-dropdown">
+          <NavLink to="/facilities" activeClassName="active" className="nav-link">
+            Facilities
+          </NavLink>
+        </li>
+
+        <li className="nav-item has-dropdown">
+          <NavLink to="/contact" activeClassName="active" className="nav-link">
+            Contact Us
+          </NavLink>
+        </li>
+      </ul>
+    </nav>
       </div>
     </header>
   );

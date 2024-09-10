@@ -7,7 +7,7 @@ const userSchema = new mongoose.Schema({
   username: { type: String, required: true, unique: true },
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
-  type: { type: String, default: 'customer' },
+  usertype: { type: String, enum: ['staff', 'admin'], default: 'staff' },
 });
 
 // Hash password before saving
@@ -19,8 +19,8 @@ userSchema.pre('save', async function (next) {
 });
 
 // Add auto-increment to userId
-userSchema.plugin(AutoIncrement, { inc_field: 'userId' });
+userSchema.plugin(AutoIncrement, { inc_field: 'staffId' });
 
-const User = mongoose.model('User', userSchema);
-module.exports = User;
+const Staff = mongoose.model('Staff', userSchema);
+module.exports = Staff;
 

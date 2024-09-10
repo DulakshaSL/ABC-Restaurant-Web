@@ -82,19 +82,7 @@ export const getProductById = async (id) => {
     }
 };
 
-// Function to fetch similar products
-export const getSimilarProducts = async (id) => {
-    try {
-        const response = await fetch(`${API_URL}/products/similar/${id}`);
-        if (!response.ok) {
-            throw new Error('Failed to fetch similar products');
-        }
-        return await response.json();
-    } catch (error) {
-        console.error('Error fetching similar products:', error);
-        throw error;
-    }
-};
+
 
 // Function to add an item to the cart
 export const addToCart = async (cartItem) => {
@@ -168,3 +156,19 @@ export const signupUser = async (formData) => {
         throw error; // Propagate the error
     }
 };
+
+// src/services/api.js
+export const getSimilarProducts = async (id) => {
+    try {
+      const response = await fetch(`http://localhost:5000/api/similar/${id}`);
+      if (!response.ok) {
+        throw new Error('Failed to fetch similar products');
+      }
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error('Error fetching similar products:', error);
+      throw error;
+    }
+  };
+  

@@ -11,6 +11,7 @@ const SignupForm = () => {
     email: '',
     password: '',
     confirmPassword: '',
+    usertype: 'staff' // Default to 'staff'
   });
 
   const [errors, setErrors] = useState({});
@@ -40,7 +41,7 @@ const SignupForm = () => {
 
     try {
       // Sending form data to the backend API
-      const response = await axios.post('http://localhost:5000/api/signup', formData);
+      const response = await axios.post('http://localhost:5000/api/signupstaff', formData);
 
       if (response.data.success) {
         // Handle successful signup
@@ -69,16 +70,14 @@ const SignupForm = () => {
       <div className="header">
         <div className="header-content">
           <img src={companyLogo} alt="Signature Cuisine Logo" className="logo" />
-          <h1>Welcome to the ABC Restaurant</h1>
+          <h1>ABC Restaurant - Staff</h1>
         </div>
       </div>
 
       {/* Signup Section */}
       <div className="login-container">
         <img src={signupImage} alt="Signup Image" className="left-image" />
-        <h2 id="titlename">Quotes of the day:</h2>
-        <h3 id="quotes">"Your fashion speaks before you do!"</h3>
-
+        
         <div className="auth-section">
           <h2>Signup Portal</h2>
           <form id="signup-form" onSubmit={handleSubmit}>
@@ -133,6 +132,16 @@ const SignupForm = () => {
               />
               {errors.confirmPassword && <span className="error">{errors.confirmPassword}</span>}
             </div>
+
+            <div class="auth-field">
+            <div>
+        <label>User Type</label>
+        <select name="usertype" value={formData.usertype} onChange={handleChange}>
+          <option value="staff">Staff</option>
+          <option value="admin">Admin</option>
+        </select>
+      </div>
+   </div>
 
             {/* Display general errors */}
             {errors.general && <div className="error">{errors.general}</div>}

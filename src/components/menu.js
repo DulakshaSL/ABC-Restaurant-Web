@@ -11,7 +11,7 @@ import AllBeverages from './AllBeverages';
 const menu = () => {
   return (
 
-    <div>
+    <div className="main-menu">
       {/* Menu Introduction Section */}
       <section className="menu-in">
         <div className="intro-c">

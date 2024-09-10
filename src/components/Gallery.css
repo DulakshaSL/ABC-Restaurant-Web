@@ -1,9 +1,9 @@
 /* Menu Section Styles*/
 
 .intro-c h2{
-    font-size: 34px;
+    font-size: 29px;
     color: white;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     text-align: left;
    }
 
@@ -70,6 +70,7 @@
   
    .gallery h2{
     font-family: 'Times New Roman', Times, serif;
+    font-size: 23px;
     font-weight:bold;
     color: white;
     border-bottom: 1px solid #989696;

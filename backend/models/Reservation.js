@@ -39,6 +39,12 @@ const ReservationSchema = new mongoose.Schema({
     type: String, 
     required: true 
   }, // Path to the uploaded file
+
+  status: {
+    type: String,
+    default: 'pending',
+  },
+
 });
 
 // Apply the auto-increment plugin to the schema

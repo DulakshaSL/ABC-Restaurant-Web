@@ -101,6 +101,16 @@ position: relative;
 
 
 }
+/* Style for active NavLink */
+.nav-link {
+  color: inherit; /* Default color */
+  text-decoration: none;
+}
+
+/* Apply green color to the active link's parent <li> */
+.nav-item .active {
+  color: rgb(2, 169, 2);
+}
 
 .account-dropdown {
 position: relative;
@@ -176,16 +186,17 @@ padding: 10px 0;
 }
 
 
-.cart-buttons {
+.cart-butt {
   margin-top: 30px;
   position: relative;
-  left: 100px;
+  
 }
 
-.checkout-button,
-.clear-cart-button {
+.checkout-butt,
+.clear-cart-butt {
   display: block;
   justify-content: center;
+  font-size: 14px;
   width: 50%;
   padding: 15px;
   background-color: #333;
@@ -196,6 +207,17 @@ padding: 10px 0;
   margin-bottom: 15px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+}
+
+.sub{
+  border-top: 1px solid #696866;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  width: 100%;
+  margin-top: 20px;
+  font-weight: 400;
+  
 }
 
 .checkout-button:hover,
@@ -474,7 +496,7 @@ margin: 0;
 
 #cart-items-list li {
 padding: 5px;
-border-bottom: 1px solid #ddd;
+border-bottom: 1px solid #ab1111;
 font-size: 14px;
 }
 

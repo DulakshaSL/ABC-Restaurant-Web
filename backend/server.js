@@ -56,6 +56,8 @@ app.use('/gallery', express.static('public/gallery'));
 const authRoutes = require('./routes/authRoutes');
 app.use('/api', authRoutes);
 
+const staffRoutes = require('./routes/staffRoutes');
+app.use('/api', staffRoutes);
 
 
 // Import and use routes
@@ -84,6 +86,10 @@ app.use('/api', facilityRoutes);
 
 const galleryRoutes = require('./routes/galleryRoutes');
 app.use('/api/gallery', galleryRoutes);
+
+const dashboardRoutes = require('./routes/dashboardRoutes');
+app.use('/api/dashboard', dashboardRoutes);
+
 
 // Start the server
 app.listen(port, () => {

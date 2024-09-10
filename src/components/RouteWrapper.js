@@ -6,7 +6,7 @@ import Footer from './Footer';
 
 const RouteWrapper = ({ children }) => {
   const location = useLocation();
-  const excludeHeaderFooter = location.pathname === '/signup' || location.pathname === '/login';
+  const excludeHeaderFooter = location.pathname === '/signup' || location.pathname === '/login' || location.pathname === '/dashboard';
   
 
   return (
