@@ -1,7 +1,7 @@
 // src/components/SignupForm.js
 import React, { useState } from 'react';
 import axios from 'axios';
-import './Signup.css';
+import './staff.css';
 import companyLogo from '../assets/images/companylogo.png';
 import signupImage from '../assets/images/signup(2).png';
 
@@ -68,7 +68,7 @@ const SignupForm = () => {
     <>
       {/* Header */}
       <div className="header">
-        <div className="header-content">
+        <div className="header-cont">
           <img src={companyLogo} alt="Signature Cuisine Logo" className="logo" />
           <h1>ABC Restaurant - Staff</h1>
         </div>
@@ -78,7 +78,7 @@ const SignupForm = () => {
       <div className="login-container">
         <img src={signupImage} alt="Signup Image" className="left-image" />
         
-        <div className="auth-section">
+        <div className="auth-sec">
           <h2>Signup Portal</h2>
           <form id="signup-form" onSubmit={handleSubmit}>
             <div className="auth-field">

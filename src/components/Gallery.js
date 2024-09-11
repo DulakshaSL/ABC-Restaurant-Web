@@ -32,7 +32,7 @@ const Gallery = () => {
   if (error) return <p>{error}</p>;
 
   return (
-    <div>
+    <div className='mainmenu-items'>
       {/* Menu Introduction Section */}
       <section className="menu-in">
         <div className="intro-c">

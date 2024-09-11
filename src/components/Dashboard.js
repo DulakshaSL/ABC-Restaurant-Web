@@ -3,6 +3,9 @@ import axios from 'axios';
 import './Dashboard.css';
 import { ToastContainer, toast } from 'react-toastify'; // Import toast functions
 import 'react-toastify/dist/ReactToastify.css'; // Import toast styles
+import AdminHeader from './adminheader';
+import Footer from './adminfooter';
+
 
 const Dashboard = () => {
   const [counts, setCounts] = useState({ queries: 0, reservations: 0, onlineOrders: 0 });
@@ -200,6 +203,7 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard">
+<AdminHeader/>
          <ToastContainer /> {/* Add ToastContainer to render toast notifications */}
       <section id="query-list-container">
         <h2>Query List</h2>
@@ -362,6 +366,7 @@ const Dashboard = () => {
            </tbody>
          </table>
        </section>
+       <Footer/>
     </div>
   );
 };

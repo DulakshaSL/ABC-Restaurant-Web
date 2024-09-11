@@ -1,5 +1,9 @@
 /* Menu Section Styles*/
 
+.mainmenu-items{
+   background-color: #1e1e1e;
+}
+
 .intro-c h2{
     font-size: 29px;
     color: white;

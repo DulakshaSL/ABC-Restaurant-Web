@@ -10,7 +10,9 @@ import Overview from './components/Overview';
 import NewArrivals from './components/NewArrivals';
 import Contacts from './components/ContactForm';
 import Facilities from './components/Facilities';
+import History from './components/History';
 import Gallery from './components/Gallery';
+import Offers from './components/offers';
 import Menu from './components/menu';
 import Confirmation from './components/OrderConfirmation';
 import ReservationPage from './components/Reservation'; // Import ReservationPage
@@ -37,8 +39,10 @@ function App() {
               <Route path="/gallery" element={<Gallery/>} />
               <Route path="/menu" element={<Menu/>} />
               <Route path="/product/:id" element={<ProductDetails />} />
-              <Route path="/reservation" element={<ReservationPage />} /> {/* Add route for reservation */}
-              <Route path="/checkout" element={<Checkout />} /> {/* Add the checkout route */}
+              <Route path="/reservation" element={<ReservationPage />} /> 
+              <Route path="/checkout" element={<Checkout />} /> 
+              <Route path="/history" element={<History />} /> 
+              <Route path="/offers" element={<Offers/>} /> 
               <Route path="/Confirmation" element={<Confirmation />} />
               <Route path="/signup" element={<SignupForm />} />
               <Route path="/staff" element={<Signup />} />

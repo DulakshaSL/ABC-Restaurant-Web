@@ -7,3 +7,4 @@ const UserGemsSchema = new Schema({
 });
 
 module.exports = mongoose.model('UserGems', UserGemsSchema);
+

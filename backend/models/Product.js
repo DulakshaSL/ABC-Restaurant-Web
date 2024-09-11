@@ -8,6 +8,10 @@ const productSchema = new mongoose.Schema({
   quantity: { type: Number, required: true },
   category: { type: String, required: true },
   popular: { type: Boolean, default: false },
+  eligible: { type: Boolean, default: false },
 });
+
+// Add a text index for the title field
+productSchema.index({ title: 'text' });
 
 module.exports = mongoose.model('Product', productSchema);

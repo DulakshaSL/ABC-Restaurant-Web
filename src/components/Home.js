@@ -7,7 +7,7 @@ import feature3Image from '../assets/images/feature3.png';
 import Carousel from './Carousel'; // Import the Carousel component
 import NewArrivals from './NewArrivals'; // Import the Carousel component
 import Testimonials from './Testimonials'; // Import the Testimonials component
-
+import SearchComponent from './SearchComponent';
 import aboutImage from '../assets/images/about.jpg';
 import specialImage from '../assets/images/specialoffer.jpeg';
 import earlyImage from '../assets/images/earlybird.jpeg';
@@ -24,11 +24,11 @@ function Home() {
     <div className="home">
       {/* Carousel Section */}
       <Carousel /> 
-
+     
       {/* Features Section */}
       <section id="features">
         <h2 className="section-featurestitle">What We Offer</h2>
-        <div className="container">
+        <div className="container-section">
           <div className="features-card">
             <img src={feature1Image} alt="Quality Clothing" />
             <h3>Master Chefs</h3>
@@ -62,7 +62,7 @@ function Home() {
       Over the years, ABC Restaurant has become a landmark for culinary excellence, receiving numerous accolades and awards.</p>
      <h3>Our Commitment</h3>
      <p>At ABC Restaurant, we're dedicated to sourcing the finest ingredients, crafting exquisite dishes, and delivering an unparalleled dining experience for every customer who walks through our doors.</p>
-     <a href="overview.php" class="learn-more">Learn More</a>
+     <a href="/overview" class="learn-more">Learn More</a>
    </div>
 
  </div>
@@ -127,7 +127,7 @@ function Home() {
   </div>
 
    <div class="view-all">
-    <a href="offers_page.php" class="view-all-b">View All</a>
+    <a href="/offers" class="view-all-b">View All</a>
    </div>
 
 </section>
@@ -138,7 +138,7 @@ function Home() {
 <section id="reservation-cta">
   <h2>Experience Signature Delicacies</h2>
   <p>Reserve your table now and immerse yourself in a culinary journey.</p>
-  <a href="reservation.php"><button id="reserve-now">Reserve Now</button></a> 
+  <a href="/reservation"><button id="reserve-now">Reserve Now</button></a> 
 </section>
 
       

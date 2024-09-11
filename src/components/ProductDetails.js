@@ -78,7 +78,7 @@ const ProductDetails = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container-products">
       <ToastContainer />
       <div className="product-details">
         <div className="product-images">
@@ -115,7 +115,7 @@ const ProductDetails = () => {
       </div>
 
       {similarProducts.length > 0 && (
-        <div>
+        <div className='similar-main'>
           <h2 id="similar">Similar Products</h2>
           <div className="similar-products">
             {similarProducts.map((similarProduct) => (

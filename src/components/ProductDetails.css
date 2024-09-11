@@ -6,7 +6,7 @@ body {
 
 }
 
-.container {
+.container-products {
     max-width: 1350px;
     margin-top: 50px;
     padding: 0 20px;
@@ -157,8 +157,13 @@ button[type="submit"]:hover {
     font-size: 17px;
 }
 
+.similar-main{
+
+    margin-right: 35px;
+}
+
 .similar-products{
-    margin-right: 65px;
+    margin-right: 95px;
 }
 
 .similar-products .product-card {

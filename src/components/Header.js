@@ -100,14 +100,6 @@ const Header = () => {
               </div>
             </li>
 
-            <li>
-              <Link to="/wishlist_items" className="wishlist-link">
-                <div className="wishlist-ico">
-                  <img src={wishlistImage} alt="Wishlist Icon" />
-                </div>
-              </Link>
-            </li>
-
            
 
             <li className="account-dropdown">
@@ -117,8 +109,8 @@ const Header = () => {
               <div className={`dropdown-content ${isDropdownVisible ? 'show' : ''}`} id="dropdownMenu">
                 {user ? (
                   <>
-                    <Link to="/profile">Profile</Link>
-                    <Link to="/dashboard">Order History</Link>
+                    <Link to="/dashboard">Profile</Link>
+                    <Link to="/history">Order History</Link>
                     <Link to="#" onClick={handleLogout}>Logout</Link>
                   </>
                 ) : (
@@ -168,6 +160,12 @@ const Header = () => {
         <li className="nav-item has-dropdown">
           <NavLink to="/facilities" activeClassName="active" className="nav-link">
             Facilities
+          </NavLink>
+        </li>
+
+        <li className="nav-item has-dropdown">
+          <NavLink to="/Offers" activeClassName="active" className="nav-link">
+            Offers
           </NavLink>
         </li>
 

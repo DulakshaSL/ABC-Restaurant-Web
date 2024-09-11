@@ -47,6 +47,35 @@ router.get('/reservations', async (req, res) => {
   }
 });
 
+
+// Fetch reservations for the logged-in user
+router.get('/userreservations', async (req, res) => {
+  try {
+    const userId = req.query.userId;
+
+    // Debug log to ensure userId is being received correctly
+    console.log('Fetching reservations for userId:', userId);
+
+    if (!userId) {
+      return res.status(400).json({ error: 'User ID is required.' });
+    }
+
+    // Fetch reservations that belong to the logged-in user
+    const reservations = await Reservation.find({ userId }).sort({ date: -1 });
+
+    res.setHeader('Content-Type', 'application/json');
+    res.json(reservations); // Send the reservations data as JSON
+  } catch (error) {
+    console.error('Error fetching reservations:', error);
+    res.status(500).json({ error: 'Failed to fetch reservations' });
+  }
+});
+
+
+
+
+
+
 // Fetch all online orders
 router.get('/online-orders', async (req, res) => {
   try {
@@ -57,6 +86,30 @@ router.get('/online-orders', async (req, res) => {
     res.status(500).json({ error: 'Failed to fetch online orders' });
   }
 });
+
+// Fetch online orders for the logged-in user
+router.get('/user-online-orders', async (req, res) => {
+  try {
+    const userId = req.query.userId;
+
+    // Debug log to ensure userId is being received correctly
+    console.log('Fetching online orders for userId:', userId);
+
+    if (!userId) {
+      return res.status(400).json({ error: 'User ID is required.' });
+    }
+
+    // Fetch online orders that belong to the logged-in user
+    const onlineOrders = await OnlineOrder.find({ userId }).sort({ created_at: -1 });
+
+    res.setHeader('Content-Type', 'application/json');
+    res.json(onlineOrders); // Send the online orders data as JSON
+  } catch (error) {
+    console.error('Error fetching online orders:', error);
+    res.status(500).json({ error: 'Failed to fetch online orders' });
+  }
+});
+
 
 // routes/dashboardRoutes.js
 router.post('/update-feedback', async (req, res) => {

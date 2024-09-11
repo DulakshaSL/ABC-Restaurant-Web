@@ -9,39 +9,6 @@ import trackImage from '../assets/images/received.png';
 const Footer = () => {
   return (
     <footer id="footer">
-      <h2 id="morelabel">Looking For Something Else?</h2>
-      <section id="more-section">
-        <div className="info-section">
-          <div className="info-card">
-            <img src={contactusImage} alt="Contact Us" />
-            <h3>Contact</h3>
-            <p>Feel free to contact us!</p>
-            <Link to="/contact"> 
-              <button>Contact Us</button>
-            </Link>
-          </div>
-          
-
-          <div className="info-card">
-            <img src={onlineImage} alt="Support" />
-            <h3>Support</h3>
-            <p>Get help with your online order</p>
-            <Link to="/profile">
-              <button>Get Help</button>
-            </Link>
-          </div>
-
-          <div className="info-card">
-            <img src={trackImage} alt="Track Order" />
-            <h3>Order</h3>
-            <p>Track Your Order</p>
-            <Link to="/profile">
-              <button>Track Order</button>
-            </Link>
-          </div>
-        </div>
-      </section>
-
       <section id="Other-Details">
         <div className="branches">
           <h3>Branch Locations</h3>

@@ -32,7 +32,7 @@ h1{
 }
 
 
-.auth-section h2{
+.auth-sec h2{
     font-size: 18px;
      font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
@@ -71,7 +71,7 @@ a{
     
 }
 
-.header-content {
+.header-cont {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -114,9 +114,9 @@ span.error {
 }
 
 
-.auth-section {
+.auth-sec {
     position: absolute;
-    width: 400px; 
+    width: 425px; 
     padding-right: 50px;
     padding-left: 25px;
     padding-bottom: 15px;
@@ -125,7 +125,7 @@ span.error {
     border: none;
     border-radius: 15px;
     margin-bottom: 110px;
-    margin-top: 120px;
+    margin-top: 250px;
     right: 140px;
    
 }

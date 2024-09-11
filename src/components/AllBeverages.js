@@ -36,7 +36,7 @@ const AllDishes = () => {
   }
 
   return (
-    <div className="container">
+    <div className="container-Dishes">
       <h2 id="main-title">All Beverages</h2>
       <div className="product-grid">
         {products.length > 0 ? (
@@ -51,13 +51,7 @@ const AllDishes = () => {
                 <p>LKR {product.price.toFixed(2)}</p>
               </a>
               {/* Replace with your actual image path */}
-<a href="#" className="wishlist-icon">
-  <img 
-    src={loveImage} 
-    alt="Add to Wishlist" 
-    className="wishlist-image" 
-  />
-</a>
+
 
             </div>
           ))

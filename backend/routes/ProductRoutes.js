@@ -27,6 +27,18 @@ router.get('/products/dishes', async (req, res) => {
   
 });
 
+// GET Discount Product
+router.get('/products/offered', async (req, res) => {
+  try {
+    // Modify the query to include eligible: true
+    const products = await Product.find({ category: "Dishes", eligible: true });
+    res.json(products);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+
+
 // GET beverages
 router.get('/products/beverages', async (req, res) => {
   try {
@@ -78,5 +90,29 @@ router.get('/similar/:id', async (req, res) => {
     res.status(500).json({ message: 'Server error', error });
   }
 });
+
+
+// Search for products based on title
+router.get('/search', async (req, res) => {
+  const searchQuery = req.query.search || '';
+
+  if (!searchQuery) {
+    return res.status(400).json({ message: 'Search query is required' });
+  }
+
+  try {
+    // Create a regular expression to perform a case-insensitive search
+    const regex = new RegExp(searchQuery, 'i');
+    const products = await Product.find({ title: { $regex: regex } });
+
+    res.json(products);
+  } catch (error) {
+    console.error('Error fetching search results:', error);
+    res.status(500).json({ message: 'Server error', error });
+  }
+});
+
+
+
 
 module.exports = router;
