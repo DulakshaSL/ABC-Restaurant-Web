@@ -63,7 +63,7 @@ const LoginForm = () => {
       <div className="header">
         <div className="header-content">
           <img src={companyLogo} alt="Company Logo" className="logo" />
-          <h1>Welcome to the Fashion Paradise</h1>
+          <h1>Welcome To The ABC Restaurant</h1>
         </div>
       </div>
 

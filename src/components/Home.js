@@ -5,7 +5,7 @@ import feature1Image from '../assets/images/feature1.png';
 import feature2Image from '../assets/images/feature2.png';
 import feature3Image from '../assets/images/feature3.png';
 import Carousel from './Carousel'; // Import the Carousel component
-import NewArrivals from './NewArrivals'; // Import the Carousel component
+import NewArrivals from './NewArrivals'; 
 import Testimonials from './Testimonials'; // Import the Testimonials component
 import SearchComponent from './SearchComponent';
 import aboutImage from '../assets/images/about.jpg';
