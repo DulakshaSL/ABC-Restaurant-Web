@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import './ProductDetails.css';
 import { getProductById, getSimilarProducts } from '../services/api';
-import { useCart } from '../context/CartContext'; // Import the useCart hook
-import { useUser } from '../context/UserContext'; // Assuming you have a UserContext for managing user data
+import { useCart } from '../context/CartContext'; 
+import { useUser } from '../context/UserContext'; 
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 

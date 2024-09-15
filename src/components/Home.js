@@ -4,15 +4,14 @@ import './Home.css';
 import feature1Image from '../assets/images/feature1.png';
 import feature2Image from '../assets/images/feature2.png';
 import feature3Image from '../assets/images/feature3.png';
-import Carousel from './Carousel'; // Import the Carousel component
+import Carousel from './Carousel'; 
 import NewArrivals from './NewArrivals'; 
-import Testimonials from './Testimonials'; // Import the Testimonials component
-import SearchComponent from './SearchComponent';
+import PopularBeverages from './popular-beverages'; 
+import Testimonials from './Testimonials'; 
 import aboutImage from '../assets/images/about.jpg';
 import specialImage from '../assets/images/specialoffer.jpeg';
 import earlyImage from '../assets/images/earlybird.jpeg';
-import getImage from '../assets/images/getonefree.jpeg';
-
+import getImage from '../assets/images/offer1.jpg';
 import dish1Image from '../assets/images/grid1.jpg';
 import dish2Image from '../assets/images/grid2.jpg';
 import dish3Image from '../assets/images/grid3.jpg';
@@ -24,6 +23,8 @@ function Home() {
     <div className="home">
       {/* Carousel Section */}
       <Carousel /> 
+
+      
      
       {/* Features Section */}
       <section id="features">
@@ -146,6 +147,7 @@ function Home() {
 
       
 <NewArrivals /> 
+<PopularBeverages/>
 
       
 

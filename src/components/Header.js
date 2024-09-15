@@ -109,7 +109,6 @@ const Header = () => {
               <div className={`dropdown-content ${isDropdownVisible ? 'show' : ''}`} id="dropdownMenu">
                 {user ? (
                   <>
-                    <Link to="/dashboard">Profile</Link>
                     <Link to="/history">Order History</Link>
                     <Link to="#" onClick={handleLogout}>Logout</Link>
                   </>

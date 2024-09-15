@@ -2,10 +2,12 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom'; // No need to import Router here
 import Home from './components/Home';
 import LoginForm from './components/LoginForm';
+import Login from './components/LoginStaff';
 import SignupForm from './components/SignupForm';
 import Dashboard from './components/Dashboard';
 import Signup from './components/SignUpStaff';
 import ProductDetails from './components/ProductDetails';
+import AddProducts from './components/AddProductForm';
 import Overview from './components/Overview';
 import NewArrivals from './components/NewArrivals';
 import Contacts from './components/ContactForm';
@@ -14,6 +16,7 @@ import History from './components/History';
 import Gallery from './components/Gallery';
 import Offers from './components/offers';
 import Menu from './components/menu';
+import StaffDashboard from './components/staffdashboard';
 import Confirmation from './components/OrderConfirmation';
 import ReservationPage from './components/Reservation'; // Import ReservationPage
 import { CartProvider } from './context/CartContext'; // Import the CartProvider
@@ -40,14 +43,17 @@ function App() {
               <Route path="/menu" element={<Menu/>} />
               <Route path="/product/:id" element={<ProductDetails />} />
               <Route path="/reservation" element={<ReservationPage />} /> 
+              <Route path="/staffboard" element={<StaffDashboard />} />
               <Route path="/checkout" element={<Checkout />} /> 
               <Route path="/history" element={<History />} /> 
               <Route path="/offers" element={<Offers/>} /> 
               <Route path="/Confirmation" element={<Confirmation />} />
+              <Route path="/addproduct" element={<AddProducts/>} />
               <Route path="/signup" element={<SignupForm />} />
               <Route path="/staff" element={<Signup />} />
               <Route path="/facilities" element={<Facilities />} />
               <Route path="/login" element={<LoginForm />} />
+              <Route path="/loginstaff" element={<Login />} />
               <Route path="/dashboard" element={<Dashboard />} />
             </Routes>
           </RouteWrapper>

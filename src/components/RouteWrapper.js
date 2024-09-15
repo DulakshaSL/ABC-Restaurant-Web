@@ -8,7 +8,7 @@ const RouteWrapper = ({ children }) => {
   const location = useLocation();
   const excludeHeaderFooter = location.pathname === '/signup' || 
   location.pathname === '/login' 
-  || location.pathname === '/staff'|| location.pathname === '/dashboard';
+  || location.pathname === '/staff'|| location.pathname === '/dashboard' || location.pathname === '/addproduct'|| location.pathname === '/staffboard';
   
 
   return (

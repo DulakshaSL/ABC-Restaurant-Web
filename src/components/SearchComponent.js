@@ -13,7 +13,7 @@ const SearchComponent = () => {
     setError(null);
 
     try {
-      const response = await axios.get(`http://localhost:5000/api/products/search?search=${query}`);
+      const response = await axios.get(`http://localhost:5000/api/products/search?q=${query}`);
       setResults(response.data);
     } catch (err) {
       setError('Error fetching search results');
@@ -25,17 +25,20 @@ const SearchComponent = () => {
   return (
     <div>
       <form onSubmit={handleSearch}>
-        <input 
-          type="text" 
-          value={query} 
-          onChange={(e) => setQuery(e.target.value)} 
-          placeholder="Search products..." 
+        <input
+          type="text"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder="Search products..."
+          aria-label="Search products"
         />
         <button type="submit" disabled={loading}>
           {loading ? 'Searching...' : 'Search'}
         </button>
       </form>
+
       {error && <p>{error}</p>}
+
       <ul>
         {results.map(product => (
           <li key={product._id}>

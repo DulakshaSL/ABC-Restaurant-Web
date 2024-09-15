@@ -116,89 +116,8 @@ const Dashboard = () => {
     }
   };
 
-  const handleStatusChange = (id) => (e) => {
-    setStatuses((prevStatuses) => ({
-      ...prevStatuses,
-      [id]: e.target.value
-    }));
-  };
 
-  const handleStatusSubmit = async (e, id) => {
-    e.preventDefault();
-
-    const status = statuses[id];
-
-    if (!id || !status) {
-      console.error('Order ID and status are required');
-      return;
-    }
-
-    try {
-      const response = await fetch('http://localhost:5000/api/dashboard/update-order-status', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ id, status }),
-      });
-
-      if (!response.ok) {
-        const errorText = await response.text();
-        console.error('Error:', errorText);
-        toast.error('Failed to update order status.');
-        return;
-      }
-
-      const data = await response.json();
-      console.log('Order status updated:', data);
-
-      // Update the status in the orders list
-      setOnlineOrders((prevOrders) =>
-        prevOrders.map((order) =>
-          order._id === id ? { ...order, status: statuses[id] } : order
-        )
-      );
-
-      toast.success('Order status updated successfully!');
-    } catch (error) {
-      console.error('Error:', error);
-      toast.error('Failed to update order status.');
-    }
-  };
-
-  const handleReservationStatusChange = (id) => (e) => {
-    setReservationStatuses((prevStatuses) => ({
-      ...prevStatuses,
-      [id]: e.target.value,
-    }));
-  };
-
-  const handleReservationStatusSubmit = async (e, id) => {
-    e.preventDefault();
-    const newStatus = reservationStatuses[id];
-
-    try {
-      const response = await axios.post(
-        'http://localhost:5000/api/dashboard/update-reservation-status',
-        { id, status: newStatus }
-      );
-
-      if (response.status === 200) {
-        toast.success('Reservation status updated successfully!');
-        // Update the reservation status in the local state
-        setReservations((prevReservations) =>
-          prevReservations.map((reservation) =>
-            reservation._id === id
-              ? { ...reservation, status: newStatus }
-              : reservation
-          )
-        );
-      }
-    } catch (error) {
-      console.error('Error updating reservation status:', error);
-      toast.error('Failed to update reservation status.');
-    }
-  };
+ 
 
 
 
@@ -249,9 +168,7 @@ const Dashboard = () => {
         </table>
       </section>
 
-      <button onClick={() => exportToExcel(queries, 'queries.xlsx')} className="btn btn-primary">
-          Export Queries to Excel
-        </button>
+     
 
      {/* Reservations Table */}
      <section id="reservation-list-container">
@@ -284,31 +201,14 @@ const Dashboard = () => {
                 <td>{reservation.seats}</td>
                 <td>{reservation.status || 'Pending'}</td>
                 <td>
-                  <form
-                    onSubmit={(e) => handleReservationStatusSubmit(e, reservation._id)}
-                  >
-                    <select
-                      name="status"
-                      value={reservationStatuses[reservation._id]}
-                      onChange={handleReservationStatusChange(reservation._id)}
-                      required
-                    >
-                      <option value="Pending">Pending</option>
-                      <option value="Confirmed">Confirmed</option>
-                      <option value="Cancelled">Cancelled</option>
-                    </select>
-                    <button type="submit">Update Status</button>
-                  </form>
+                  
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
       </section>
-      <button onClick={() => exportToExcel(reservations, 'reservations.xlsx')} className="btn btn-primary">
-          Export Reservations to Excel
-        </button>
-
+    
       <section id="online-order-list-container">
         <h2>Online Order List</h2>
         <table id="OnlineOrdertable">
@@ -351,22 +251,8 @@ const Dashboard = () => {
                 {order.status || 'Pending'}
               </td>
                  <td>
-                   {/* Render the status with a dropdown to change it */}
-                   <form onSubmit={(e) => handleStatusSubmit(e, order._id)}>
-                     <select
-                       name="status"
-                       value={statuses[order._id]}
-                       onChange={handleStatusChange(order._id)}
-                       required
-                     >
-                       <option value="Pending">Pending</option>
-                       <option value="Processing">Processing</option>
-                       <option value="Shipped">Shipped</option>
-                       <option value="Delivered">Delivered</option>
-                       <option value="Cancelled">Cancelled</option>
-                     </select>
-                     <button type="submit">Update Status</button>
-                   </form>
+        
+                   
                  </td>
                 
                </tr>
@@ -374,9 +260,7 @@ const Dashboard = () => {
            </tbody>
          </table>
        </section>
-       <button onClick={() => exportToExcel(onlineOrders, 'onlineOrders.xlsx')} className="btn btn-primary">
-          Export Online Orders to Excel
-        </button>
+      
        <Footer/>
     </div>
   );

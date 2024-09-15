@@ -46,7 +46,7 @@ const SignupForm = () => {
         // Handle successful signup
         setSuccessMessage('Signup successful! Redirecting to login page...');
         setTimeout(() => {
-          window.location.href = '/login'; // Adjust based on your routing setup
+          window.location.href = '/login';
         }, 2000);
       } else {
         // Handle validation errors from the backend
@@ -76,8 +76,7 @@ const SignupForm = () => {
       {/* Signup Section */}
       <div className="login-container">
         <img src={signupImage} alt="Signup Image" className="left-image" />
-        <h2 id="titlename">Quotes of the day:</h2>
-        <h3 id="quotes">"Your fashion speaks before you do!"</h3>
+        
 
         <div className="auth-section">
           <h2>Signup Portal</h2>

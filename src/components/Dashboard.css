@@ -21,6 +21,11 @@
     margin-bottom: 10px;
  }
 
+ .btn-primary{
+   float: right;
+   margin-right: 125px;
+ }
+
  /* Style the query list container */
  #query-list-container h2, #online-order-list-container h2 {
  padding-top: 20px;
@@ -152,3 +157,27 @@
     background-color: green;
     cursor: pointer;
  }
+
+ #online-order-list-container {
+   max-height: 450px; /* Adjust height as needed */
+   overflow: auto; /* Enable both vertical and horizontal scrolling */
+
+   max-width: 100%;
+   margin-top: 150px;
+ }
+ 
+ #OnlineOrdertable {
+   width: 100%; /* Make sure the table width is 100% of its container */
+   border-collapse: collapse; /* Optional: Collapse borders for better appearance */
+ 
+ }
+ 
+ #OnlineOrdertable th,
+ #OnlineOrdertable td {
+ 
+ }
+ 
+ #OnlineOrdertable th {
+  
+ }
+ 

@@ -1,23 +1,22 @@
-// src/components/SignupForm.js
 import React, { useState } from 'react';
 import axios from 'axios';
-import './staff.css';
 import companyLogo from '../assets/images/companylogo.png';
 import signupImage from '../assets/images/signup(2).png';
 
-const SignupForm = () => {
+
+
+const StaffSignupForm = () => {
   const [formData, setFormData] = useState({
     username: '',
     email: '',
     password: '',
     confirmPassword: '',
-    usertype: 'staff' // Default to 'staff'
+    usertype: 'staff', 
   });
 
   const [errors, setErrors] = useState({});
   const [successMessage, setSuccessMessage] = useState('');
 
-  // Handle input change
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -25,38 +24,29 @@ const SignupForm = () => {
     });
   };
 
-  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    // Reset errors and success message before submission
     setErrors({});
     setSuccessMessage('');
 
-    // Basic client-side validation
     if (formData.password !== formData.confirmPassword) {
       setErrors({ confirmPassword: 'Passwords do not match.' });
       return;
     }
 
     try {
-      // Sending form data to the backend API
-      const response = await axios.post('http://localhost:5000/api/signupstaff', formData);
+      const response = await axios.post('http://localhost:5000/api/staff-signup', formData);
 
       if (response.data.success) {
-        // Handle successful signup
         setSuccessMessage('Signup successful! Redirecting to login page...');
         setTimeout(() => {
-          window.location.href = '/login'; // Adjust based on your routing setup
+          window.location.href = '/login'; 
         }, 2000);
       } else {
-        // Handle validation errors from the backend
         setErrors(response.data.errors || { general: 'An unexpected error occurred. Please try again.' });
       }
     } catch (error) {
-      console.error('Error in signup route:', error);
       if (error.response && error.response.data) {
-        // Display specific error message from the backend
         setErrors(error.response.data.errors || { general: 'An unexpected error occurred. Please try again.' });
       } else {
         setErrors({ general: 'An unexpected error occurred. Please try again.' });
@@ -66,19 +56,15 @@ const SignupForm = () => {
 
   return (
     <>
-      {/* Header */}
       <div className="header">
-        <div className="header-cont">
-          <img src={companyLogo} alt="Signature Cuisine Logo" className="logo" />
+        <div className="header-content">
+          <img src={companyLogo} alt="ABC Restaurant Logo" className="logo" />
           <h1>ABC Restaurant - Staff</h1>
         </div>
       </div>
 
-      {/* Signup Section */}
       <div className="login-container">
-        <img src={signupImage} alt="Signup Image" className="left-image" />
-        
-        <div className="auth-sec">
+        <div className="auth-section">
           <h2>Signup Portal</h2>
           <form id="signup-form" onSubmit={handleSubmit}>
             <div className="auth-field">
@@ -133,31 +119,25 @@ const SignupForm = () => {
               {errors.confirmPassword && <span className="error">{errors.confirmPassword}</span>}
             </div>
 
-            <div class="auth-field">
-            <div>
-        <label>User Type</label>
-        <select name="usertype" value={formData.usertype} onChange={handleChange}>
-          <option value="staff">Staff</option>
-          <option value="admin">Admin</option>
-        </select>
-      </div>
-   </div>
+            <div className="auth-field">
+              <label htmlFor="usertype">User Type</label>
+              <select name="usertype" value={formData.usertype} onChange={handleChange}>
+                <option value="staff">Staff</option>
+                <option value="admin">Admin</option>
+              </select>
+            </div>
 
-            {/* Display general errors */}
             {errors.general && <div className="error">{errors.general}</div>}
-
-            {/* Display success message */}
             {successMessage && <div className="success">{successMessage}</div>}
 
             <div className="btn-container">
               <button type="submit" className="auth-btn">Signup</button>
             </div>
           </form>
-          <p>Already have an account? <a href="/login">Login</a></p>
         </div>
       </div>
     </>
   );
 };
 
-export default SignupForm;
+export default StaffSignupForm;

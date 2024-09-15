@@ -7,7 +7,6 @@ const cors = require('cors');
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
 const path = require('path'); // Import the path module
-
 const app = express();
 const port = 5000;
 
@@ -89,6 +88,8 @@ app.use('/api/gallery', galleryRoutes);
 
 const dashboardRoutes = require('./routes/dashboardRoutes');
 app.use('/api/dashboard', dashboardRoutes);
+
+
 
 
 // Start the server
