@@ -1,0 +1,45 @@
+[{
+  "_id": {
+    "$oid": "66e72ffd79cae5cd5178cf77"
+  },
+  "userId": 21,
+  "billingDetails": {
+    "firstName": "Ashen",
+    "lastName": "Wijesinghe",
+    "email": "ashenwijesinghe00@gmail.com",
+    "contact": "0722061858",
+    "address": "204/2/2 Main Street",
+    "district": "colombo"
+  },
+  "cartItems": [
+    {
+      "productId": "66d47aefc652e716c9f89926",
+      "product_name": "Special Chicken Cheese Burge",
+      "size": "Default Size",
+      "quantity": 1,
+      "price": 1000,
+      "_id": {
+        "$oid": "66e72ffd79cae5cd5178cf78"
+      }
+    },
+    {
+      "productId": "66d58d4269b2bab7655aa9f8",
+      "product_name": "Cuisine Special Mix Rice",
+      "size": "Default Size",
+      "quantity": 2,
+      "price": 1500,
+      "_id": {
+        "$oid": "66e72ffd79cae5cd5178cf79"
+      }
+    }
+  ],
+  "paymentMethod": "CashOnDelivery",
+  "discountAmount": 0,
+  "newTotal": 4000,
+  "status": "pending",
+  "orderId": "ORD445681",
+  "orderDate": {
+    "$date": "2024-09-15T19:05:33.999Z"
+  },
+  "__v": 0
+}]

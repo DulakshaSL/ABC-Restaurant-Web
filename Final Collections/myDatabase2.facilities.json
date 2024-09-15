@@ -1,0 +1,32 @@
+[{
+  "_id": {
+    "$oid": "66dd5a2d5dd9b44d3f9065a8"
+  },
+  "facility_name": "Swimming Pool",
+  "description": "Dive into our luxurious outdoor swimming pool, designed with temperature control to ensure comfort throughout the year. Surrounded by lush greenery, the pool area features comfortable sun loungers, private cabanas, and a poolside bar offering refreshing drinks and light snacks. Whether you're looking to relax, swim laps, or simply soak up the sun, our swimming pool is the perfect spot to unwind.",
+  "image": "pool.jpg"
+},
+{
+  "_id": {
+    "$oid": "66dd5c79e46ba9e84910b01c"
+  },
+  "facility_name": "Gym & Fitness Center",
+  "description": "Stay fit and energized at our state-of-the-art fitness center, equipped with the latest cardio machines, free weights, and resistance training equipment. Our gym is designed for all levels of fitness enthusiasts, from beginners to advanced athletes. Personal trainers are available upon request to assist with workout routines and fitness goals, ensuring you maintain your fitness regime even while traveling.",
+  "image": "gym.jpg"
+},
+{
+  "_id": {
+    "$oid": "66dd5c8ae46ba9e84910b01e"
+  },
+  "facility_name": "Conference & Meeting Rooms",
+  "description": "Our versatile conference and meeting rooms are perfect for business gatherings, seminars, and private events. Equipped with high-speed internet, modern audio-visual equipment, and comfortable seating, our spaces are designed to cater to your specific needs. Professional staff are available to assist with logistics, catering, and technical support, ensuring a seamless and productive event.",
+  "image": "conference_room.jpg"
+},
+{
+  "_id": {
+    "$oid": "66dd5caae46ba9e84910b020"
+  },
+  "facility_name": "Rooftop Lounge & Bar",
+  "description": "Experience breathtaking views and a sophisticated atmosphere at our rooftop lounge and bar. Perfect for unwinding after a long day, the lounge offers a curated selection of cocktails, fine wines, and light bites. Enjoy live music performances on select evenings as you take in the panoramic city skyline, making it an ideal spot for both relaxation and socializing.",
+  "image": "rooftop_bar.jpg"
+}]

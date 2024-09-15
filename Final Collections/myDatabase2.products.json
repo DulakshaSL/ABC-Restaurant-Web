@@ -1,0 +1,123 @@
+[{
+  "_id": {
+    "$oid": "66d47aefc652e716c9f89926"
+  },
+  "title": "Special Chicken Cheese Burge",
+  "image_path": "populardish1.jpg",
+  "price": 1000,
+  "description": "Indulge in a cheesy delight! Our special cheese chicken burger features a crispy, juicy chicken patty topped with a generous layer of melted cheese. The combination of flavors and textures is truly satisfying. Perfect for a quick and delicious meal.",
+  "quantity": 50,
+  "category": "Dishes",
+  "popular": true
+},
+{
+  "_id": {
+    "$oid": "66d58d4269b2bab7655aa9f8"
+  },
+  "title": "Cuisine Special Mix Rice",
+  "image_path": "populardish2.jpg",
+  "price": 1500,
+  "description": "Experience a flavor explosion with our Cuisine Special Mix Rice! This tantalizing dish features a harmonious blend of fragrant rice, savory meats, and vibrant vegetables, all cooked to perfection.",
+  "quantity": 50,
+  "category": "Dishes",
+  "popular": true
+},
+{
+  "_id": {
+    "$oid": "66dd93d4e46ba9e84910b03c"
+  },
+  "title": "Chicken Cheese Pizza",
+  "image_path": "populardis4.jpg",
+  "price": 1750,
+  "description": "Experience a flavor explosion with our chicken cheese pizza! This tantalizing dish features a harmonious blend of savory meats, and vibrant vegetables, all cooked to perfection.",
+  "quantity": 50,
+  "category": "Dishes",
+  "popular": false
+},
+{
+  "_id": {
+    "$oid": "66dd9d98d50579a0b9fc02ed"
+  },
+  "title": "Iced Cappuccino",
+  "image_path": "populardrink1.jpg",
+  "price": 500,
+  "description": "A popular caffeinated beverage that combines the rich flavor of espresso with the creamy texture of milk, all served over ice. It's a perfect choice for those who crave a cool, refreshing drink on a hot day.",
+  "quantity": 50,
+  "category": "Beverages",
+  "popular": true
+},
+{
+  "_id": {
+    "$oid": "66dda001d50579a0b9fc02f0"
+  },
+  "title": "Milk Shake",
+  "image_path": "populardrink2.jpg",
+  "price": 300,
+  "description": "A Popular frozen dessert made by blending milk, ice cream, and often a flavoring agent like a fruit, candy, or chocolate syrup. It's a classic treat enjoyed by people of all ages.",
+  "quantity": 50,
+  "category": "Beverages",
+  "popular": true
+},
+{
+  "_id": {
+    "$oid": "66dda09fd50579a0b9fc02f2"
+  },
+  "title": "Mango Smoothie",
+  "image_path": "populardrink3.jpg",
+  "price": 300,
+  "description": "refreshing and flavorful beverage made by blending ripe mangoes with other ingredients like milk,yogurt, or ice. It's a popular choice for a healthy and satisfying snack or breakfast.",
+  "quantity": 50,
+  "category": "Beverages",
+  "popular": true
+},
+{
+  "_id": {
+    "$oid": "66dda10fd50579a0b9fc02f4"
+  },
+  "title": "Special Herbal Tea",
+  "image_path": "populardrink4.jpg",
+  "price": 250,
+  "description": "Herbal teas,also known as tisanes, are made by infusing herbs, spices, or flowers in hot water. They offer a variety of flavors, aromas, and potential health benefits. Here are a few special herbal teas to explore:",
+  "quantity": 50,
+  "category": "Beverages",
+  "popular": false
+},
+{
+  "_id": {
+    "$oid": "66e1c06017c9ec4ec263c8f6"
+  },
+  "title": "Club Sanwitch",
+  "image_path": "pd9.jpg",
+  "price": 1500,
+  "description": "Experience a flavor explosion with club sandwitch ! This tantalizing dish features a harmonious blend of savory meats, and vibrant vegetables, all cooked to perfection.",
+  "quantity": 50,
+  "category": "Dishes",
+  "popular": false,
+  "eligible": true
+},
+{
+  "_id": {
+    "$oid": "66e1cb4417c9ec4ec263c8f8"
+  },
+  "title": "Ramen",
+  "image_path": "pd1.jpg",
+  "price": 1500,
+  "description": "Experience a flavor explosion with ramen! This tantalizing dish features a harmonious blend of savory meats, and vibrant vegetables, all cooked to perfection.",
+  "quantity": 50,
+  "category": "Dishes",
+  "popular": false,
+  "eligible": true
+},
+{
+  "_id": {
+    "$oid": "66e1cbd517c9ec4ec263c8fa"
+  },
+  "title": "Chapathi",
+  "image_path": "pd10.jpg",
+  "price": 1500,
+  "description": "Experience a flavor explosion with our chicken cheese pizza! This tantalizing dish features a harmonious blend of savory meats, and vibrant vegetables, all cooked to perfection.",
+  "quantity": 50,
+  "category": "Dishes",
+  "popular": false,
+  "eligible": true
+}]

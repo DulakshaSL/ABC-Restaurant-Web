@@ -1,0 +1,16 @@
+[{
+  "_id": {
+    "$oid": "66e6ee30c821332a4f32578e"
+  },
+  "id": "userId",
+  "reference_value": null,
+  "seq": 22
+},
+{
+  "_id": {
+    "$oid": "66e6f95dc821332a4f325f4e"
+  },
+  "reference_value": null,
+  "id": "staffId",
+  "seq": 7
+}]

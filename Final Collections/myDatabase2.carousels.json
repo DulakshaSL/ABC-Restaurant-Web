@@ -1,0 +1,33 @@
+[{
+  "_id": {
+    "$oid": "66d2077af9521e4a519d4a52"
+  },
+  "image_path": "mainslide1.jpg",
+  "alt_text": "Popular Dish",
+  "overlay_title": "Delicious Dishes",
+  "overlay_content": "Satisfy your cravings with our delicious dishes, made with fresh, high-quality ingredients.",
+  "button_link": "/menu",
+  "button_text": "Explore More"
+},
+{
+  "_id": {
+    "$oid": "66d466c6c652e716c9f89921"
+  },
+  "image_path": "mainslide2.jpg",
+  "alt_text": "Our Elegant Ambiance",
+  "overlay_title": "Delicious Dishes",
+  "overlay_content": "Experience our elegant ambiance and enjoy a truly memorable dining experience.",
+  "button_link": "/menu",
+  "button_text": "Take a Tour"
+},
+{
+  "_id": {
+    "$oid": "66d46735c652e716c9f89923"
+  },
+  "image_path": "mainslide3.jpg",
+  "alt_text": "Promotion Photo",
+  "overlay_title": "Limited-time offers",
+  "overlay_content": "Don't miss out on our limited time offers! Get up to 50% off on selected items.",
+  "button_link": "/menu",
+  "button_text": "Grab 'em"
+}]
